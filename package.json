@@ -1,0 +1,15 @@
+{
+  "name": "create-frontend",
+  "description": "frontend for fhotofarm",
+  "version": "0.0.0",
+  "author": "(Ashish Maurya) <62279600+ashishmaurya-crypto@users.noreply.github.com>",
+  "bin": "src/cli.js",
+  "files": [
+    "src",
+    "templates"
+  ],
+  "dependencies": {
+    "create-create-app": "^7.3.0"
+  },
+  "license": "MIT"
+}

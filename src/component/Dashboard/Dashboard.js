@@ -23,6 +23,9 @@ class Dashboard extends Component {
                             <input />
                             <button className='mt-2'>Saved</button>
                         </Col>
+                        <Col className='mt-4'>
+                            <button onClick={() => window.localStorage.clear()}>logout</button>
+                        </Col>
 
                     </Row>
 

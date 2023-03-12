@@ -54,3 +54,10 @@
   background-color: aliceblue;
   /* border: 2px solid black; */
 }
+
+input{
+  border: 1px solid rgb(4, 70, 70);
+  padding : 0.3rem;
+  border-radius: 5px;
+  width: 100%;
+}

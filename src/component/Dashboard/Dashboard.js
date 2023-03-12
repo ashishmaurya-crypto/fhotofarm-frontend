@@ -26,7 +26,6 @@ class Dashboard extends Component {
                         <Col className='mt-4'>
                             <button onClick={() => window.localStorage.clear()}>logout</button>
                         </Col>
-
                     </Row>
 
                 </Container>

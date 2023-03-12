@@ -71,7 +71,7 @@ const Login = () => {
                         <button className='login-button' onClick={() => getLogin()}>Login</button>
                     </Col>
                     <Col className='mt-4'>
-                        <button className='signup-button'>Signup</button>
+                        <button className='signup-button' onClick={()=> navigate("signup", { replace: "true" })}>Signup</button>
                     </Col>
                     
                 </Row>

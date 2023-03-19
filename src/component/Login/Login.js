@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import './Login.scss';
 import { useNavigate } from 'react-router-dom';
@@ -20,13 +20,13 @@ const Login = () => {
     const [passwordVisibilty, setPasswordVisibilty] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(()=>{
-            if(window.localStorage.getItem('token')){
-                navigate("/home", { replace: "true" })
-            }else{
-                navigate("/", { replace: "true" })
-            }
-    })
+    // useEffect(()=>{
+    //         if(window.localStorage.getItem('token')){
+    //             navigate("/home", { replace: "true" })
+    //         }else{
+    //             navigate("/", { replace: "true" })
+    //         }
+    // })
 
 
     const getLogin = async () => {
@@ -39,6 +39,7 @@ const Login = () => {
 
 
         console.log('login', url, bodydata)
+        // navigate("/home", { replace: "true" })
 
         await axios.post(url, bodydata).then((response) => {
 

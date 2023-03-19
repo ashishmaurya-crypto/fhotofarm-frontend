@@ -24,8 +24,9 @@ const Signup = () => {
         gender: "",
     });
     const [passwordVisibilty, setPasswordVisibilty] = useState(false);
+    const [confirmPasswordVisibilty, setConfirmPasswordVisibilty] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    
+
     const signup = ()=> {
         console.log(state)
     }
@@ -122,13 +123,13 @@ const Signup = () => {
                             <span className='position-relative  w-100'>
                                 <span className='input-logo'><img alt='sas' src={lock} /></span>
                                 <input
-                                    type={passwordVisibilty ? "text" : "password"}
+                                    type={confirmPasswordVisibilty ? "text" : "password"}
                                     value={state.confirmPassword}
                                     placeholder="Confirm Password"
                                     name='confirmPassword'
                                     onChange={(event) => setState({ ...state, [event.target.name]: event.target.value })}
                                 />
-                                {passwordVisibilty ? <span onClick={() => { setPasswordVisibilty(!passwordVisibilty) }} className='input-eye'><img alt='sas' src={eye} /></span> : <span onClick={() => { setPasswordVisibilty(!passwordVisibilty) }} className='input-eye'><img alt='sas' src={eyeslash} /></span>}
+                                {confirmPasswordVisibilty ? <span onClick={() => { setConfirmPasswordVisibilty(!confirmPasswordVisibilty) }} className='input-eye'><img alt='sas' src={eye} /></span> : <span onClick={() => { setConfirmPasswordVisibilty(!confirmPasswordVisibilty) }} className='input-eye'><img alt='sas' src={eyeslash} /></span>}
                             </span>
                         </Col>
                     </Row>

@@ -26,6 +26,10 @@ const Signup = () => {
     const [passwordVisibilty, setPasswordVisibilty] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
+    const signup = ()=> {
+        console.log(state)
+    }
+
 
     return (
         <>
@@ -128,7 +132,7 @@ const Signup = () => {
                         <Col className='d-flex flex-column justify-content-center align-items-start'>
                             <label>Gender</label>
                             <select
-
+                                value={state.gender}
                                 onChange={(event) => setState({ ...state, ['gender']: event.target.value })}
                             >
                                 <option value="">Select Gender</option>
@@ -141,7 +145,7 @@ const Signup = () => {
                     </Row>
                     <Row>
                         <Col className='mt-4'>
-                            <button className='signup-button'>SIGN UP</button>
+                            <button className='signup-button' onClick={()=> signup()}>SIGN UP</button>
                         </Col>
                     </Row>
                 </Container>

@@ -12,7 +12,6 @@ export default function Topbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isSideBarOpen = useSelector((state) => state.sideBar)
-  console.log('sidebar', isSideBarOpen)
   return (
     <>
       <Container fluid className='topbar-container'>

@@ -56,7 +56,6 @@ const Login = () => {
 
     return (
         <>
-
             <Container fluid className='globle_bg globle_container d-flex justify-content-center'>
                 <Container className='my-auto mx-auto d-flex flex-column login-container'>
                     {isLoading ? <LoadingScreen /> : null}

@@ -25,12 +25,10 @@ const Signup = () => {
     });
     const [passwordVisibilty, setPasswordVisibilty] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-
+    
     const signup = ()=> {
         console.log(state)
     }
-
-
     return (
         <>
             <Container fluid className='globle_bg globle_container d-flex justify-content-center'>

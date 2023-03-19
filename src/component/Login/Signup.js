@@ -49,8 +49,9 @@ const Signup = () => {
                                 <input
                                     type="text"
                                     value={state.firstName}
-                                    onChange={(event) => setState({ ...state, ['firstName']: event.target.value })}
+                                    onChange={(event) => setState({ ...state, [event.target.name]: event.target.value })}
                                     placeholder="First Name"
+                                    name='firstName'
                                 />
                                 <span className='input-logo'><img alt='sas' src={person} /></span>
                             </span>
@@ -64,7 +65,8 @@ const Signup = () => {
                                     type="text"
                                     placeholder="Last Name"
                                     value={state.lastName}
-                                    onChange={(event) => setState({ ...state, ['lastName']: event.target.value })}
+                                    name='lastName'
+                                    onChange={(event) => setState({ ...state, [event.target.name]: event.target.value })}
                                 />
                                 <span className='input-logo'><img alt='sas' src={person} /></span>
                             </span>
@@ -78,7 +80,8 @@ const Signup = () => {
                                     type="text"
                                     value={state.email}
                                     placeholder="Email"
-                                    onChange={(event) => setState({ ...state, ['email']: event.target.value })}
+                                    name='email'
+                                    onChange={(event) => setState({ ...state, [event.target.name]: event.target.value })}
                                 />
                                 <span className='input-logo'><img alt='sas' src={email} /></span>
                             </span>
@@ -92,7 +95,8 @@ const Signup = () => {
                                     type="text"
                                     value={state.phoneNumber}
                                     placeholder="Phone Number"
-                                    onChange={(event) => setState({ ...state, ['phoneNumber']: event.target.value })}
+                                    name='phoneNumber'
+                                    onChange={(event) => setState({ ...state, [event.target.name]: event.target.value })}
                                 />
                                 <span className='input-logo'><img alt='sas' src={telephone} /></span>
                             </span>
@@ -107,7 +111,8 @@ const Signup = () => {
                                     type={passwordVisibilty ? "text" : "password"}
                                     value={state.password}
                                     placeholder="password"
-                                    onChange={(event) => setState({ ...state, ['password']: event.target.value })}
+                                    name='password'
+                                    onChange={(event) => setState({ ...state, [event.target.name]: event.target.value })}
                                 />
                                 {passwordVisibilty ? <span onClick={() => { setPasswordVisibilty(!passwordVisibilty) }} className='input-eye'><img alt='sas' src={eye} /></span> : <span onClick={() => { setPasswordVisibilty(!passwordVisibilty) }} className='input-eye'><img alt='sas' src={eyeslash} /></span>}
                             </span>
@@ -122,7 +127,8 @@ const Signup = () => {
                                     type={passwordVisibilty ? "text" : "password"}
                                     value={state.confirmPassword}
                                     placeholder="Confirm Password"
-                                    onChange={(event) => setState({ ...state, ['confirmPassword']: event.target.value })}
+                                    name='confirmPassword'
+                                    onChange={(event) => setState({ ...state, [event.target.name]: event.target.value })}
                                 />
                                 {passwordVisibilty ? <span onClick={() => { setPasswordVisibilty(!passwordVisibilty) }} className='input-eye'><img alt='sas' src={eye} /></span> : <span onClick={() => { setPasswordVisibilty(!passwordVisibilty) }} className='input-eye'><img alt='sas' src={eyeslash} /></span>}
                             </span>
@@ -133,7 +139,8 @@ const Signup = () => {
                             <label>Gender</label>
                             <select
                                 value={state.gender}
-                                onChange={(event) => setState({ ...state, ['gender']: event.target.value })}
+                                name='gender'
+                                onChange={(event) => setState({ ...state, [event.target.name]: event.target.value })}
                             >
                                 <option value="">Select Gender</option>
                                 <option value="M">Male</option>

@@ -3,7 +3,7 @@ import {Outlet} from 'react-router-dom';
 import Topbar from './Topbar';
 import './style/Layout.scss';
 import SideBar from './SideBar';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 
 export default function Layout() {

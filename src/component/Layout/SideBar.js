@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import './style/SideBar.scss';
 import { useSelector, useDispatch } from 'react-redux';

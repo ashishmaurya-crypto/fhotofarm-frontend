@@ -17,7 +17,7 @@ export default function Topbar() {
       <Container fluid className='topbar-container'>
         <Row className='px-4'>
           <Col onClick={()=> dispatch(sideBar(!isSideBarOpen))}>
-            <img src={hemburgur} />
+            <img alt='hamburgur' src={hemburgur} />
           </Col>
           <Col>
             <h5 onClick={() => navigate("/home", { replace: "false" })}>Home</h5>

@@ -20,13 +20,13 @@ const Login = () => {
     const [passwordVisibilty, setPasswordVisibilty] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
-    // useEffect(()=>{
-    //         if(window.localStorage.getItem('token')){
-    //             navigate("/home", { replace: "true" })
-    //         }else{
-    //             navigate("/", { replace: "true" })
-    //         }
-    // })
+    useEffect(()=>{
+            if(window.localStorage.getItem('token')){
+                navigate("/home", { replace: "true" })
+            }else{
+                navigate("/", { replace: "true" })
+            }
+    })
 
 
     const getLogin = async () => {
@@ -75,14 +75,14 @@ const Login = () => {
                                     placeholder="email"
                                     onChange={(event) => setEmail(event.target.value)}
                                 />
-                                <span className='input-logo'><img src={person} /></span></span>
+                                <span className='input-logo'><img alt='sas' src={person} /></span></span>
                         </Col>
                     </Row>
                     <Row>
                         <Col className='d-flex flex-column justify-content-center align-items-start'>
                             <label>password</label>
                             <span className='position-relative w-100'>
-                                <span className='input-logo'><img src={lock} /></span>
+                                <span className='input-logo'><img alt='sas' src={lock} /></span>
                                 <input
                                     type={passwordVisibilty ? "text" : "password"}
                                     value={password}

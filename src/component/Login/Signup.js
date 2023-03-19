@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import './Login.scss';
+import { useNavigate } from 'react-router-dom';
+import person from '../Shared/Assets/person.svg';
+import lock from '../Shared/Assets/lock.svg';
+import email from '../Shared/Assets/email.svg';
+import telephone from '../Shared/Assets/telephone.svg';
+import eye from '../Shared/Assets/eye.svg';
+import eyeslash from '../Shared/Assets/eye-slash.svg';
+import LoadingScreen from '../Shared/Component/LoadingScreen';
 
 
 const Signup = () => {
-
+    const navigate = useNavigate();
     const [state, setState] = useState({
         firstName: "",
         lastName: "",
@@ -13,86 +22,129 @@ const Signup = () => {
         confirmPassword: "",
         birthDate: "",
         gender: "",
-    })
+    });
+    const [passwordVisibilty, setPasswordVisibilty] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
 
     return (
         <>
-            <Container fluid className='globle_container d-flex justify-content-center'>
-                <Container className='d-flex flex-column signup-container'>
+            <Container fluid className='globle_bg globle_container d-flex justify-content-center'>
+                <Container className='my-auto mx-auto d-flex flex-column sign-container'>
+                    {isLoading ? <LoadingScreen /> : null}
+                    <button className='login-button' onClick={() => navigate("/login", { replace: "true" })}>Back to Login</button>
+                    <Row>
+                        <Col>
+                            <h3 className='login-title'>Sign Up</h3>
+                        </Col>
+                    </Row>
                     <Row>
                         <Col className='d-flex flex-column justify-content-center align-items-start'>
                             <label>First Name</label>
-                            <input
-                                type="text"
-                                value={state.firstName}
-                                onChange={(event) => setState({ ...state, [firstName]: event.target.value })}
-                                placeholder="First Name"
-                            />
+                            <span className='position-relative  w-100'>
+                                <input
+                                    type="text"
+                                    value={state.firstName}
+                                    onChange={(event) => setState({ ...state, ['firstName']: event.target.value })}
+                                    placeholder="First Name"
+                                />
+                                <span className='input-logo'><img src={person} /></span>
+                            </span>
                         </Col>
+                    </Row>
+                    <Row>
                         <Col className='d-flex flex-column justify-content-center align-items-start'>
                             <label>Last Name</label>
-                            <input
-                                type="text"
-                                placeholder="Last Name"
-                                value={state.lastName}
-                                onChange={(event) => setState({ ...state, [lastName]: event.target.value })}
-                            />
+                            <span className='position-relative  w-100'>
+                                <input
+                                    type="text"
+                                    placeholder="Last Name"
+                                    value={state.lastName}
+                                    onChange={(event) => setState({ ...state, ['lastName']: event.target.value })}
+                                />
+                                <span className='input-logo'><img src={person} /></span>
+                            </span>
                         </Col>
+                    </Row>
+                    <Row>
                         <Col className='d-flex flex-column justify-content-center align-items-start'>
                             <label>Email</label>
-                            <input
-                                type="text"
-                                value={state.email}
-                                onChange={(event) => setState({ ...state, [email]: event.target.value })}
-                            />
+                            <span className='position-relative  w-100'>
+                                <input
+                                    type="text"
+                                    value={state.email}
+                                    placeholder="Email"
+                                    onChange={(event) => setState({ ...state, ['email']: event.target.value })}
+                                />
+                                <span className='input-logo'><img src={email} /></span>
+                            </span>
                         </Col>
+                    </Row>
+                    <Row>
                         <Col className='d-flex flex-column justify-content-center align-items-start'>
                             <label>Phone Number</label>
-                            <input
-                                type="text"
-                                value={state.phoneNumber}
-                                onChange={(event) => setState({ ...state, [phoneNumber]: event.target.value })}
-                            />
+                            <span className='position-relative  w-100'>
+                                <input
+                                    type="text"
+                                    value={state.phoneNumber}
+                                    placeholder="Phone Number"
+                                    onChange={(event) => setState({ ...state, ['phoneNumber']: event.target.value })}
+                                />
+                                <span className='input-logo'><img src={telephone} /></span>
+                            </span>
                         </Col>
+                    </Row>
+                    <Row>
                         <Col className='d-flex flex-column justify-content-center align-items-start'>
                             <label>Password</label>
-                            <input
-                                type="text"
-                                value={state.password}
-                                onChange={(event) => setState({ ...state, [password]: event.target.value })}
-                            />
+                            <span className='position-relative  w-100'>
+                                <span className='input-logo'><img src={lock} /></span>
+                                <input
+                                    type={passwordVisibilty ? "text" : "password"}
+                                    value={state.password}
+                                    placeholder="password"
+                                    onChange={(event) => setState({ ...state, ['password']: event.target.value })}
+                                />
+                                {passwordVisibilty ? <span onClick={() => { setPasswordVisibilty(!passwordVisibilty) }} className='input-eye'><img src={eye} /></span> : <span onClick={() => { setPasswordVisibilty(!passwordVisibilty) }} className='input-eye'><img src={eyeslash} /></span>}
+                            </span>
                         </Col>
+                    </Row>
+                    <Row>
                         <Col className='d-flex flex-column justify-content-center align-items-start'>
                             <label>Confirm Password</label>
-                            <input
-                                type="text"
-                                value={state.confirmPassword}
-                                onChange={(event) => setState({ ...state, [confirmPassword]: event.target.value })}
-                            />
+                            <span className='position-relative  w-100'>
+                                <span className='input-logo'><img src={lock} /></span>
+                                <input
+                                    type={passwordVisibilty ? "text" : "password"}
+                                    value={state.confirmPassword}
+                                    placeholder="Confirm Password"
+                                    onChange={(event) => setState({ ...state, ['confirmPassword']: event.target.value })}
+                                />
+                                {passwordVisibilty ? <span onClick={() => { setPasswordVisibilty(!passwordVisibilty) }} className='input-eye'><img src={eye} /></span> : <span onClick={() => { setPasswordVisibilty(!passwordVisibilty) }} className='input-eye'><img src={eyeslash} /></span>}
+                            </span>
                         </Col>
+                    </Row>
+                    <Row>
                         <Col className='d-flex flex-column justify-content-center align-items-start'>
                             <label>Gender</label>
                             <select
-                            
-                                onChange={(event) => setState({ ...state, [gender]: event.target.value })}
+
+                                onChange={(event) => setState({ ...state, ['gender']: event.target.value })}
                             >
+                                <option value="">Select Gender</option>
                                 <option value="M">Male</option>
-                                <option value="F">female</option>
-                                <option value="Others">others</option>
+                                <option value="F">Female</option>
+                                <option value="Others">Others</option>
                             </select>
-                        </Col>
-                        <Col className='mt-4'>
-                            <button className='login-button' onClick={() => getLogin()}>Login</button>
-                        </Col>
-                        <Col className='mt-4'>
-                            <button className='signup-button' onClick={() => navigate("signup", { replace: "true" })}>Signup</button>
-                        </Col>
 
+                        </Col>
                     </Row>
-
+                    <Row>
+                        <Col className='mt-4'>
+                            <button className='signup-button'>SIGN UP</button>
+                        </Col>
+                    </Row>
                 </Container>
-
             </Container>
         </>
     )

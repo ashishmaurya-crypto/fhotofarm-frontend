@@ -14,19 +14,20 @@ class Dashboard extends Component {
         return (
             <>
                 <Container fluid className='main_container d-flex justify-content-center'>
-                    <Row className='my-auto mx-auto d-flex flex-column'>
-                        <Col className='d-flex justify-content-center align-items-center'>
-                            <p> dashboard page</p>
-                        </Col>
-                        <Col className='d-flex flex-column justify-content-center align-items-start'>
-                            <label>Name</label>
-                            <input />
-                            <button className='mt-2'>Saved</button>
-                        </Col>
-                        <Col className='mt-4'>
-                            <button onClick={() => window.localStorage.clear()}>logout</button>
-                        </Col>
-                    </Row>
+                    <Container className='mx-auto'>
+                        <div>
+                            <Row>
+                                <Col>
+                                    <h4>Title</h4>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <h4>Paragraph</h4>
+                                </Col>
+                            </Row>
+                        </div>
+                    </Container>
 
                 </Container>
 

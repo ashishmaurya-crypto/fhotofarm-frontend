@@ -1,0 +1,58 @@
+.sidebar-container {
+    width: inherit;
+    height: 100%;
+    // border: 3px solid red;
+    position: absolute;
+    left: 0%;
+    background-color: rgba(245, 245, 245, 0.186);
+    padding: 0% !important;
+}
+
+.sidebar-outer {
+    height: 100vh;
+    z-index: 2;
+}
+
+.sidebar {
+    min-width: 20%;
+    max-width: 20%;
+    height: 100vh;
+    // border: 2px solid green;
+    position: absolute;
+    left: 0%;
+    background: rgb(15, 70, 116);
+    background: linear-gradient(180deg, rgba(15, 70, 116, 1) 0%, rgba(13, 134, 135, 1) 51%, rgba(15, 70, 116, 1) 100%);
+    animation: myAnim 0.5s ease 0s 1 normal forwards;
+    z-index: 5;
+    filter: drop-shadow(5px 5px 10px #000);
+    
+
+    button {
+        border: none;
+        background: transparent;
+    }
+
+    .tabs{
+        color: white;
+        // border: 1px solid white;
+        margin: 20px 0px 20px 0px;
+        border-radius: 3px;
+    }
+
+    .tabs:hover{
+        background-color: rgba(13, 134, 135, 1);
+        cursor: pointer;
+    }
+}
+
+@keyframes myAnim {
+    0% {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

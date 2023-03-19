@@ -6,3 +6,12 @@ export const addName = (name) => {
     }
 
 }
+
+export const sideBar = (value) => {
+
+    return {
+        type : "SIDEBAR",
+        payload : value
+    }
+
+}

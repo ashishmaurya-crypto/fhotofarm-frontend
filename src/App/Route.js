@@ -6,20 +6,19 @@ import NotFound from '../component/404/404';
 import Dashboard from '../component/Dashboard/Dashboard';
 import Profile from '../component/Profile/Profile';
 import Layout from '../component/Layout/Layout';
+import CreateFeed from '../component/CreateFeed/CreateFeed';
 
 const WrapRouter = () => {
     return (
         <>
-            <Route path='/' element={<Layout/>}>
+            <Route element={<Layout/>}>
                 <Route path='/home' element={<Dashboard />} />
                 <Route path='/Profile' element={<Profile />} />
+                <Route path='/createfeed' element={<CreateFeed />} />
             </Route>
         </>
 
     )
-
-
-
 }
 
 const Router = () => {

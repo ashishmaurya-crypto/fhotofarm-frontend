@@ -89,7 +89,7 @@ const Login = () => {
                                     placeholder="password"
                                     onChange={(event) => { setPassword(event.target.value) }}
                                 />
-                                {passwordVisibilty ? <span onClick={() => { setPasswordVisibilty(!passwordVisibilty) }} className='input-eye'><img src={eye} /></span> : <span onClick={() => { setPasswordVisibilty(!passwordVisibilty) }} className='input-eye'><img src={eyeslash} /></span>}
+                                {passwordVisibilty ? <span onClick={() => { setPasswordVisibilty(!passwordVisibilty) }} className='input-eye'><img alt='sas' src={eye} /></span> : <span onClick={() => { setPasswordVisibilty(!passwordVisibilty) }} className='input-eye'><img alt='sas' src={eyeslash} /></span>}
                             </span>
                             <span className='position-relative w-100 mt-1'><p className='position-absolute top-0 end-0'>forgot password?</p></span>
                         </Col>
@@ -107,8 +107,8 @@ const Login = () => {
                     <Row>
                         <Col>
                             <Row>
-                                <Col><img src={facebook} /></Col>
-                                <Col><img src={google} /></Col>
+                                <Col><img alt='sas' src={facebook} /></Col>
+                                <Col><img alt='sas' src={google} /></Col>
                             </Row>
                         </Col>
                     </Row>
